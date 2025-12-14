@@ -25,8 +25,8 @@ bool is_prime(vector<int> arr){
 }
 
 void solve(vector<int> num){
-    if(num.size()!=0 && !is_prime(num)) 
-        return;
+    // if(num.size()!=0 && !is_prime(num)) 
+    //     return;
 
     if(num.size()==n){
         for(int i=0; i<n; i++){
@@ -38,7 +38,8 @@ void solve(vector<int> num){
 
     for(int i=0; i<=9; i++){
         num.push_back(i);
-        solve(num);
+        if(is_prime(num))
+            solve(num);
         num.pop_back();
     }
 }
